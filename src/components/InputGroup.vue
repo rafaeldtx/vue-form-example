@@ -1,6 +1,6 @@
 <template>
     <div class="input-group">
-        <label>{{ label }}:</label>
+        <label class="label">{{ label }}:</label>
         <div class="input">
             <slot></slot>
         </div>
@@ -22,6 +22,10 @@ export default {
         font-size: 1.4rem;
     }
 
+    .label {
+        text-transform: capitalize;
+    }
+
     .input {
         display: flex;
         align-self: stretch;
@@ -36,7 +40,6 @@ export default {
         border-radius: 5px;
         padding: 5px 10px;
     }
-
 
     input:focus {
         border: 1px solid #BBB;

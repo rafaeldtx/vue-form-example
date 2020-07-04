@@ -3,16 +3,12 @@
         <h1 class="form-title" v-if="title">{{ title }}</h1>
         <hr v-if="title">
 
-        <input-group label='Name'>
-            <input type="text" name="name" id="name">
-        </input-group>
-
-        <input-group label='Email'>
-            <input type="email" name="email" id="email">
-        </input-group>
-
-        <input-group label='Password'>
-            <input type="password" name="password" id="password">
+        <input-group
+            v-for="attribute in attributes"
+            :label="attribute.name"
+            :key="attribute.name"
+        >
+            <input type="text" :name="attribute.name" :id="attribute.name">
         </input-group>
     </div>
 </template>
@@ -26,6 +22,10 @@ export default {
         title: {
             type: String,
             default: null
+        },
+        attributes: {
+            type: Array,
+            required: true
         }
     }
 }

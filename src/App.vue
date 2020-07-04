@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Form />
-    <Result />
+    <Form :attributes="formAttributes" />
+    <Result :result="formAttributes"/>
   </div>
 </template>
 
@@ -11,7 +11,16 @@ import Result from './components/Result.vue'
 
 export default {
   name: 'App',
-  components: { Form, Result }
+  components: { Form, Result },
+  data() {
+    return {
+        formAttributes: [
+            { name: 'name', value: null },
+            { name: 'email', value: null },
+            { name: 'password', value: null }
+        ]
+    }
+  }
 }
 </script>
 
