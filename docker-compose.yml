@@ -1,0 +1,11 @@
+version: '3'
+services:
+    web:
+        build: .
+        entrypoint: npm run serve
+        container_name: vue-form-example
+        ports:
+            - 8080:8080
+        volumes:
+            - .:/vue-form-example
+            - /vue-form-example/node_modules
