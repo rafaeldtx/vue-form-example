@@ -1,24 +1,19 @@
 # vue-form-example
+This repository has a simple example of a form submiting in Vue.js
 
-## Project setup
-```
-npm install
-```
+### System requirements
+- Docker/Docker-compose ([docker](https://docs.docker.com/engine/install "docker") / [docker-compose](https://docs.docker.com/compose/install/ "docker-compose"))
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Setup Project
 
-### Compiles and minifies for production
+Access the terminal inside project folder and execute the steps:
+
+Build image
 ```
-npm run build
+$ docker-compose build
 ```
 
-### Lints and fixes files
+Run project in background (detached)
 ```
-npm run lint
+$ docker-compose up -d
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
