@@ -48,6 +48,9 @@
                     v-model.lazy="attributes.saveData"
                 />
             </input-group>
+
+            <hr>
+            <button @click.prevent="submit">Submit</button>
         </form>
 
         <div class="card-grid">
@@ -70,6 +73,7 @@ export default {
     },
     data() {
         return {
+            submitted: false,
             attributes: {
                 name: null,
                 surname: null,
@@ -77,6 +81,11 @@ export default {
                 password: null,
                 saveData: false
             }
+        }
+    },
+    methods: {
+        submit() {
+            this.submitted = true
         }
     }
 }
@@ -86,8 +95,6 @@ export default {
 .title {
     text-align: center;
 }
-
-
 
 .form .card-grid {
     background-color: #F2F2F2;
