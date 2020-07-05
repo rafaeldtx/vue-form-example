@@ -1,6 +1,6 @@
 <template>
     <div class="form">
-        <form class="card-grid">
+        <form class="card-grid" v-if="!submitted">
             <h1 class="title" v-if="title">{{ title }}</h1>
             <hr v-if="title">
 
@@ -53,7 +53,7 @@
             <button @click.prevent="submit">Submit</button>
         </form>
 
-        <div class="card-grid">
+        <div class="card-grid" v-else>
             <result :attributes="attributes" />
         </div>
     </div>
