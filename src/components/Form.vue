@@ -1,38 +1,98 @@
 <template>
-    <div class="form card-grid">
-        <h1 class="form-title" v-if="title">{{ title }}</h1>
-        <hr v-if="title">
+    <div class="form">
+        <form class="card-grid">
+            <h1 class="title" v-if="title">{{ title }}</h1>
+            <hr v-if="title">
 
-        <input-group
-            v-for="attribute in attributes"
-            :label="attribute.name"
-            :key="attribute.name"
-        >
-            <input type="text" :name="attribute.name" :id="attribute.name">
-        </input-group>
+            <input-group label="Name">
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    v-model.lazy="attributes.name"
+                />
+            </input-group>
+
+            <input-group label="Surname">
+                <input
+                    type="text"
+                    name="surname"
+                    id="surname"
+                    v-model.lazy="attributes.surname"
+                />
+            </input-group>
+
+             <input-group label="Email">
+                <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    v-model.lazy="attributes.email"
+                />
+            </input-group>
+
+            <input-group label="Password">
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    v-model.lazy="attributes.password"
+                />
+            </input-group>
+
+            <input-group label="Save Data?">
+                <input
+                    type="checkbox"
+                    name="saveData"
+                    id="saveData"
+                    v-model.lazy="attributes.saveData"
+                />
+            </input-group>
+        </form>
+
+        <div class="card-grid">
+            <result :attributes="attributes" />
+        </div>
     </div>
 </template>
 
 <script>
 import InputGroup from './InputGroup'
+import Result from './Result'
 
 export default {
-    components: { InputGroup },
+    components: { InputGroup, Result },
     props: {
         title: {
             type: String,
             default: null
-        },
-        attributes: {
-            type: Array,
-            required: true
+        }
+    },
+    data() {
+        return {
+            attributes: {
+                name: null,
+                surname: null,
+                email: null,
+                password: null,
+                saveData: false
+            }
         }
     }
 }
 </script>
 
 <style>
-.form .title {
+.title {
     text-align: center;
+}
+
+
+
+.form .card-grid {
+    background-color: #F2F2F2;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.3rem 15px;
 }
 </style>

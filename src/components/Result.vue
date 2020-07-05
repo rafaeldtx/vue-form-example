@@ -1,8 +1,10 @@
 <template>
-  <div class="card-grid">
-      <div class="result-group" v-for="field in result" :key="field.name">
-          <span class="title">{{ field.name }}:</span>
-          {{ field.value || "? ? ?" }}
+  <div class="result">
+      <h1 class="title">Result</h1>
+      <hr>
+      <div class="group" v-for="(field, index) in attributes" :key="index">
+          <span class="title">{{ index }}:</span>
+          {{ field || "? ? ?" }}
       </div>
   </div>
 </template>
@@ -10,8 +12,8 @@
 <script>
 export default {
     props: {
-        result: {
-            type: Array,
+        attributes: {
+            type: Object,
             required: true
         }
     }
@@ -19,7 +21,7 @@ export default {
 </script>
 
 <style>
-    .result-group {
+    .result .group {
         font-size: 1.4rem;
         margin: 1.2rem;
     }

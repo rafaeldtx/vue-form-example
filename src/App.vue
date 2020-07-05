@@ -1,42 +1,25 @@
 <template>
   <div id="app">
-    <Form :attributes="formAttributes" />
-    <Result :result="formAttributes"/>
+    <Form title='Form Example' />
   </div>
 </template>
 
 <script>
 import Form from './components/Form.vue'
-import Result from './components/Result.vue'
 
 export default {
   name: 'App',
-  components: { Form, Result },
-  data() {
-    return {
-        formAttributes: [
-            { name: 'name', value: null },
-            { name: 'email', value: null },
-            { name: 'password', value: null }
-        ]
-    }
-  }
+  components: { Form }
 }
 </script>
 
 <style>
 body {
-	background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #0F2027;
+    background: -webkit-linear-gradient(to right,
+                                       #2C5364, #203A43, #0F2027);
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
 
-}
-
-.card-grid {
-    background-color: #F2F2F2;
-    border-radius: 8px;
-    padding: 1rem;
-    margin: 1.3rem 15px;
 }
 
 </style>
