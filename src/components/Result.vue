@@ -4,7 +4,7 @@
       <hr>
       <div class="group" v-for="(field, index) in attributes" :key="index">
           <span class="title">{{ index }}:</span>
-          {{ field || "? ? ?" }}
+          {{ field }}
       </div>
   </div>
 </template>
@@ -28,5 +28,10 @@ export default {
 
     .result-group .title {
         text-transform: capitalize;
+    }
+
+    .group .title {
+        text-transform: capitalize;
+        font-weight: bold;
     }
 </style>
